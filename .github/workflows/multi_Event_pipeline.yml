@@ -7,6 +7,7 @@ on:
       pull_request:
         branches:
             - main
+      workflow_dispatch:
 
 
 
@@ -24,4 +25,10 @@ jobs:
             - name: "Running on pull request"
               run: echo "Running On pull Request"
 
+    on-workflow-dispatch:
+        if: github.event_name == 'workflow_dispatch'
+        runs-on: ubuntu-latest
+        steps: 
+            - name: "Running on Workflow dispatch "
+              run: echo "Running On workflow_dispatch"
 
