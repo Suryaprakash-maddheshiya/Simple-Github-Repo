@@ -1,0 +1,15 @@
+name: "Multi Event pipeLine " # Name of pipeline
+on:
+      push:  # Event: whenever a push is made to the repository on the main/test branch
+        branches:
+            - main
+            - test
+
+jobs:
+    on-push:
+        runs-on: ubuntu-latest
+        steps:
+           - name: "Running on main branch"
+             run: echo "Running on main push"
+
+
